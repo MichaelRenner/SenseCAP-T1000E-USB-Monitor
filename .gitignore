@@ -1,0 +1,9 @@
+# Recorded diagnostics and derived exports may contain precise locations.
+*.log
+*.csv
+
+# Python and local development files.
+__pycache__/
+*.py[cod]
+.venv/
+venv/
