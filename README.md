@@ -131,7 +131,7 @@ Exit `picocom` with **Ctrl+A**, then **Ctrl+X** before starting this monitor. If
 ### Live dashboard
 
 ```bash
-bin/python3 t1000e_monitor.py --port /dev/ttyACM0
+python3 bin/t1000e_monitor.py --port /dev/ttyACM0
 ```
 
 The default baud rate is **115200** and the dashboard refreshes every **1 second**. The script keeps running until **Ctrl+C**. No serial commands are sent.
@@ -141,7 +141,7 @@ The raw messages are logged to a file such as `t1000e_20261115_123456.log` **in 
 ### Choose the raw log location
 
 ```bash
-bin/python3 t1000e_monitor.py --port /dev/ttyACM0 --log logs/tracker.log
+python3 bin/t1000e_monitor.py --port /dev/ttyACM0 --log logs/tracker.log
 ```
 
 Create the `logs` directory yourself first (`mkdir -p logs`). If the destination file already exists, the program **appends** to it. The file may contain location information; see [Privacy](#privacy).
@@ -149,19 +149,19 @@ Create the `logs` directory yourself first (`mkdir -p logs`). If the destination
 ### Refresh the dashboard every two seconds
 
 ```bash
-bin/python3 t1000e_monitor.py --interval 2
+python3 bin/t1000e_monitor.py --interval 2
 ```
 
 ### Use a different serial device or baud rate
 
 ```bash
-bin/python3 t1000e_monitor.py --port /dev/ttyACM1 --baud 115200
+python3 bin/t1000e_monitor.py --port /dev/ttyACM1 --baud 115200
 ```
 
 ### Replay an existing recording
 
 ```bash
-bin/python3 t1000e_monitor.py --replay t1000e_20261114_212441.log
+python3 bin/t1000e_monitor.py --replay t1000e_20261114_212441.log
 ```
 
 Replay reads the entire existing log, prints a final summary, and **does not open USB**. It expects the timestamped log format produced by this monitor, for example:
@@ -175,7 +175,7 @@ A plain `picocom` capture without these timestamps is not a supported replay for
 ### Export GNSS positions as CSV
 
 ```bash
-bin/python3 t1000e_monitor.py \
+python3 bin/t1000e_monitor.py \
   --replay t1000e_20261114_212441.log \
   --csv positions.csv
 ```
